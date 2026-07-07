@@ -16,8 +16,11 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # 1. Entra na pasta do seu projeto no servidor
-            cd /home/admin/htdocs/Zilmer-teste2
+            # 0. Carrega as variáveis do sistema para encontrar o npm e o pm2
+            source ~/.bashrc
+            
+            # 1. Entra na pasta do seu projeto no servidor (Mude se necessário)
+            cd /var/www/meu-app
             
             # 2. Baixa as alterações novas do GitHub
             sudo git pull origin main
