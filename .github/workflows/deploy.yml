@@ -16,23 +16,25 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # 0. Carrega as variáveis do sistema para encontrar o npm e o pm2
-            source ~/.bashrc
+            # 1. Carrega os atalhos do Node.js (Isso resolve o erro "npm command not found")
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            export PATH=$PATH:/usr/local/bin
             
-            # 1. Entra na pasta do seu projeto no servidor (Mude se necessário)
-            cd /var/www/meu-app
+            # 2. Entra na pasta CORRETA do projeto
+            cd /home/admin/Zilmer-teste2
             
-            # 2. Baixa as alterações novas do GitHub
-            sudo git pull origin main
+            # 3. Baixa as atualizações do GitHub (SEM sudo)
+            git pull origin main
             
-            # 3. Garante que pacotes novos sejam instalados (se houver)
+            # 4. Instala pacotes novos (se houver)
             npm install
             
-            # 4. Limpa o cache antigo
-            sudo rm -rf .next
+            # 5. Limpa o cache antigo (SEM sudo)
+            rm -rf .next
             
-            # 5. Gera a build nova e atualizada
+            # 6. Gera a build nova e atualizada
             npm run build
             
-            # 6. Reinicia o site para aplicar as mudanças
+            # 7. Reinicia o site
             pm2 restart next-app
