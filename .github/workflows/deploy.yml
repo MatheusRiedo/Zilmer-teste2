@@ -22,7 +22,7 @@ jobs:
             export PATH=$PATH:/usr/local/bin
             
             # 2. Entra na pasta CORRETA do projeto
-            cd /home/admin/Zilmer-teste2
+            cd /var/www/meu-app
             
             # 3. Baixa as atualizações do GitHub (SEM sudo)
             git pull origin main
