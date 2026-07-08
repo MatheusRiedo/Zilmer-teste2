@@ -42,7 +42,7 @@ export default function Header() {
             onMouseEnter={() => setIsAboutOpen(true)}
             onMouseLeave={() => setIsAboutOpen(false)}
           >
-            <span>{locale === 'en' ? 'ABOUT' : locale === 'es' ? 'NOSOTROS' : 'TESTE-HEADER'}</span>
+            <span>{locale === 'en' ? 'ABOUT' : locale === 'es' ? 'NOSOTROS' : 'Zilmer'}</span>
             {isAboutOpen && (
               <>
                 <div className={styles.dropdownBridge}></div>
@@ -69,7 +69,7 @@ export default function Header() {
             onMouseEnter={() => setIsProductsOpen(true)}
             onMouseLeave={() => setIsProductsOpen(false)}
           >
-            <span>{locale === 'en' ? 'PRODUCTS' : locale === 'es' ? 'PRODUCTOS' : 'PRODUTOS zilmer'}</span>
+            <span>{locale === 'en' ? 'PRODUCTS' : locale === 'es' ? 'PRODUCTOS' : 'PRODUTOS'}</span>
             {isProductsOpen && (
               <>
                 <div className={styles.dropdownBridge}></div>
