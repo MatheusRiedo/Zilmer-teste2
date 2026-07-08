@@ -69,7 +69,7 @@ export default function Header() {
             onMouseEnter={() => setIsProductsOpen(true)}
             onMouseLeave={() => setIsProductsOpen(false)}
           >
-            <span>{locale === 'en' ? 'PRODUCTS' : locale === 'es' ? 'PRODUCTOS' : 'PRODUTOS'}</span>
+            <span>{locale === 'en' ? 'PRODUCTS' : locale === 'es' ? 'PRODUCTOS' : 'PRODUTOS zilmer'}</span>
             {isProductsOpen && (
               <>
                 <div className={styles.dropdownBridge}></div>
